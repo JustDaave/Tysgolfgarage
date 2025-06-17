@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ty's Golf Garage</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      :root {
+        --green: #476a43;
+        --light-green: #6b8e66;
+        --dark-green: #2e4a2b;
+      }
+      .bg-green-gradient {
+        background: linear-gradient(180deg, var(--green) 0%, var(--dark-green) 100%);
+      }
+      .hover-scale {
+        transition: transform 0.3s ease;
+      }
+      .hover-scale:hover {
+        transform: scale(1.05);
+      }
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: var(--light-green);
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      .calendly-inline-widget {
+        border: 2px solid var(--light-green);
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+      .hero-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+      header {
+        /* Removed old flex styling and simplified */
+        background: var(--dark-green);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 10;
+      }
+
+      nav {
+        display: flex;
+        gap: 2rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+<header class="flex items-center justify-between px-8 py-4 bg-[--dark-green] shadow-lg">
+  <div class="flex items-center space-x-4">
+    <img src="logo.png" alt="Ty's Golf Garage Logo" class="h-16 rounded-full">
+    <div class="text-left">
+      <h1 class="text-2xl font-extrabold text-white">Ty's Golf Garage</h1>
+      <p class="text-sm italic text-[--light-green]">"Swing on by!"</p>
+    </div>
+  </div>
+
+  <nav class="flex gap-8 text-white font-semibold text-lg">
+    <a href="index.html" class="nav-link hover:text-[--light-green] transition">Home</a>
+    <a href="#shop" class="nav-link hover:text-[--light-green] transition">Shop</a>
+    <a href="#appointments" class="nav-link hover:text-[--light-green] transition">Appointments</a>
+    <a href="#contact" class="nav-link hover:text-[--light-green] transition">Contact</a>
+  </nav>
+</header>
+
+
+    <section class="py-24 bg-black-gradient">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left">
+          <h2 class="text-5xl font-extrabold mb-6 text-white">Premium Golf Clubs</h2>
+          <p id="typing-text" class="text-2xl text-[--light-green] mb-8 whitespace-nowrap overflow-hidden border-r-4 border-[--light-green]"></p>
+          <a href="#shop" class="inline-block bg-green-gradient text-[--dark-green] font-bold py-3 px-6 rounded-full hover:bg-white transition hover-scale">Shop Now</a>
+        </div>
+        <div class="md:w-1/2 mt-8 md:mt-0">
+          <img src="https://media.istockphoto.com/id/467646056/photo/bw-golfer-teeing-up.jpg?s=612x612&w=0&k=20&c=Co3i8fLmCK3pvAEwjr_o1U3HZkaDzCtLRFntFXp3wlI=" alt="Golf course landscape" class="hero-image">
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="py-24 text-center bg-gray-900">
+      <div class="max-w-6xl mx-auto px-6 bg-[--dark-green] rounded-2xl shadow-2xl p-12 border-2 border-[--light-green] hover-scale">
+        <h3 class="text-4xl font-bold text-[--light-green] mb-10">Shop Premium Clubs</h3>
+        <div id="my-store-86746005" class="rounded-lg overflow-hidden"></div>
+        <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?86746005&data_platform=code&data_date=2025-06-16" charset="utf-8"></script>
+        <script type="text/javascript">
+          xProductBrowser(
+            "categoriesPerRow=4",
+            "views=grid(20,4) list(60) table(60)",
+            "categoryView=grid",
+            "searchView=list",
+            "id=my-store-86746005"
+          );
+        </script>
+      </div>
+    </section>
+
+    <section id="appointments" class="py-24 bg-gray-900 text-center">
+      <div class="max-w-6xl mx-auto px-6 bg-[--dark-green] rounded-2xl shadow-2xl p-12 border-2 border-[--light-green] hover-scale">
+        <h3 class="text-4xl font-bold text-[--light-green] mb-6">Book Your In-Person Purchase Appointment</h3>
+        <p class="text-xl text-white mb-8">Schedule a personalized golf club fitting session with our experts to optimize your swing and performance.</p>
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/cheetahh2019?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=476a43" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
+      </div>
+    </section>
+
+    <section id="contact" class="py-24 text-center bg-gray-900">
+      <div class="max-w-3xl mx-auto px-6 bg-[--dark-green] rounded-2xl shadow-2xl p-12 border-2 border-[--light-green] hover-scale">
+        <h3 class="text-4xl font-bold text-[--light-green] mb-6">Get in Touch</h3>
+        <p class="text-2xl text-white">Reach out at <a href="tel:4354144613" class="underline hover:text-[--light-green] transition">435-414-4613</a></p>
+        <p class="text-xl mt-4 text-[--light-green]">Or email us at <a href="mailto:info@tysgolfgarage.com" class="underline hover:text-white transition">info@tysgolfgarage.com</a></p>
+        <h3 class="text-xl font-bold text-[--light-green] mb-6">Located in Saint George, UT</h3>
+      </div>
+    </section>
+
+    <footer class="bg-green-gradient text-center py-8">
+      <p class="text-white text-lg">© 2025 Ty's Golf Garage. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+  const text = "Where passion meets precision.";
+  const typingElement = document.getElementById("typing-text");
+  let index = 0;
+
+  function typeText() {
+    if (index < text.length) {
+      typingElement.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeText, 50); // adjust speed here
+    }
+  }
+
+  window.addEventListener("load", typeText);
+</script>
+  </body>
+</html>
